@@ -21,11 +21,11 @@ public class MainTest {
 	}
 
 	/**
-	 * A l'ouverture de l'application affiche le titre.
+	 * A l'ouverture l'application affiche le titre.
 	 * 
 	 * <pre>
-	"SUDOKU"
-	"======"
+	"          SUDOKU        "
+	"          ======        "
 	 * </pre>
 	 * 
 	 * , en colonne 5.
@@ -36,10 +36,55 @@ public class MainTest {
 			@Override
 			public void test(String output) {
 				Scanner scanner = new Scanner(output);
-				Assert.assertEquals("    SUDOKU", scanner.nextLine());
-				Assert.assertEquals("    ======", scanner.nextLine());
+				Assert.assertEquals("          SUDOKU        ", scanner.nextLine());
+				Assert.assertEquals("          ======        ", scanner.nextLine());
 			}
 		});
 	}
 
+	/**
+	 * A l'ouverture l'application, sous le titre, affiche une grille vide.
+	 * 
+	 * <pre>
+	"          SUDOKU        "
+	"          ======        "
+	"+-------+-------+-------+"
+	"| . . . | . . . | . . . |"
+	"| . . . | . . . | . . . |"
+	"| . . . | . . . | . . . |"
+	"+-------+-------+-------+"
+	"| . . . | . . . | . . . |"
+	"| . . . | . . . | . . . |"
+	"| . . . | . . . | . . . |"
+	"+-------+-------+-------+"
+	"| . . . | . . . | . . . |"
+	"| . . . | . . . | . . . |"
+	"| . . . | . . . | . . . |"
+	"+-------+-------+-------+"
+	 * </pre>
+	 */
+	@Test
+	public void testAffichgeSudokuTitre() {
+		scenario.test(0, new TestScenario() {
+			@Override
+			public void test(String output) {
+				Scanner scanner = new Scanner(output);
+				scanner.nextLine();
+				scanner.nextLine();
+				Assert.assertEquals("+-------+-------+-------+", scanner.nextLine());
+				Assert.assertEquals("| . . . | . . . | . . . |", scanner.nextLine());
+				Assert.assertEquals("| . . . | . . . | . . . |", scanner.nextLine());
+				Assert.assertEquals("| . . . | . . . | . . . |", scanner.nextLine());
+				Assert.assertEquals("+-------+-------+-------+", scanner.nextLine());
+				Assert.assertEquals("| . . . | . . . | . . . |", scanner.nextLine());
+				Assert.assertEquals("| . . . | . . . | . . . |", scanner.nextLine());
+				Assert.assertEquals("| . . . | . . . | . . . |", scanner.nextLine());
+				Assert.assertEquals("+-------+-------+-------+", scanner.nextLine());
+				Assert.assertEquals("| . . . | . . . | . . . |", scanner.nextLine());
+				Assert.assertEquals("| . . . | . . . | . . . |", scanner.nextLine());
+				Assert.assertEquals("| . . . | . . . | . . . |", scanner.nextLine());
+				Assert.assertEquals("+-------+-------+-------+", scanner.nextLine());
+			}
+		});
+	}
 }
