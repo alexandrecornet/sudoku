@@ -27,9 +27,14 @@ public class Vue4x4Test {
 	 */
 	@Test
 	public void testafficheGrilleVide(){
-		Vue4x4 vue4x4 = new Vue4x4();
+		final Vue4x4 vue4x4 = new Vue4x4();
 		Scenario scenario = new Scenario();
-		scenario.setApplication(() -> vue4x4.afficheGrilleVide());
+		scenario.setApplication(new Runnable() {
+
+			public void run() {
+				vue4x4.afficheGrilleVide();
+			}
+		});
 		scenario.test(0, new TestScenario() {
 			@Override
 			public void test(String output) {
