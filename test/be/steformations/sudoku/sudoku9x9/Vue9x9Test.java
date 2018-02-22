@@ -14,47 +14,67 @@ public class Vue9x9Test {
 	 * Vue9X9.afficheGrilleVide() affiche une grille vide d'un sudoku 9x9.
 	 * 
 	 * <pre>
-	"      SUDOKU 9 x 9      "
-	"      ============      "
-	"+-------+-------+-------+"
-	"| . . . | . . . | . . . |"
-	"| . . . | . . . | . . . |"
-	"| . . . | . . . | . . . |"
-	"+-------+-------+-------+"
-	"| . . . | . . . | . . . |"
-	"| . . . | . . . | . . . |"
-	"| . . . | . . . | . . . |"
-	"+-------+-------+-------+"
-	"| . . . | . . . | . . . |"
-	"| . . . | . . . | . . . |"
-	"| . . . | . . . | . . . |"
-	"+-------+-------+-------+"
+	 * 	"      SUDOKU 9 x 9      "
+	 * 	"      ============      "
+	 * 	"+-------+-------+-------+"
+	 * 	"| . . . | . . . | . . . |"
+	 * 	"| . . . | . . . | . . . |"
+	 * 	"| . . . | . . . | . . . |"
+	 * 	"+-------+-------+-------+"
+	 * 	"| . . . | . . . | . . . |"
+	 * 	"| . . . | . . . | . . . |"
+	 * 	"| . . . | . . . | . . . |"
+	 * 	"+-------+-------+-------+"
+	 * 	"| . . . | . . . | . . . |"
+	 * 	"| . . . | . . . | . . . |"
+	 * 	"| . . . | . . . | . . . |"
+	 * 	"+-------+-------+-------+"
 	 * </pre>
 	 */
 	@Test
-	public void testafficheGrilleVide(){
-		Vue9X9 vue9x9 = new Vue9X9();
+	public void testafficheGrilleVide() {
+		final Vue9X9 vue9x9 = new Vue9X9();
 		Scenario scenario = new Scenario();
-		scenario.setApplication(() -> vue9x9.afficheGrilleVide());
+		scenario.setApplication(new Runnable() {
+
+			public void run() {
+				vue9x9.afficheGrilleVide();
+			}
+		});
 		scenario.test(0, new TestScenario() {
 			@Override
 			public void test(String output) {
 				Scanner scanner = new Scanner(output);
-				Assert.assertEquals("      SUDOKU 9 x 9      ", scanner.nextLine()); 
-				Assert.assertEquals("      ============      ", scanner.nextLine()); 
-				Assert.assertEquals("+-------+-------+-------+", scanner.nextLine()); 
-				Assert.assertEquals("| . . . | . . . | . . . |", scanner.nextLine()); 
-				Assert.assertEquals("| . . . | . . . | . . . |", scanner.nextLine()); 
-				Assert.assertEquals("| . . . | . . . | . . . |", scanner.nextLine()); 
-				Assert.assertEquals("+-------+-------+-------+", scanner.nextLine()); 
-				Assert.assertEquals("| . . . | . . . | . . . |", scanner.nextLine()); 
-				Assert.assertEquals("| . . . | . . . | . . . |", scanner.nextLine()); 
-				Assert.assertEquals("| . . . | . . . | . . . |", scanner.nextLine()); 
-				Assert.assertEquals("+-------+-------+-------+", scanner.nextLine()); 
-				Assert.assertEquals("| . . . | . . . | . . . |", scanner.nextLine()); 
-				Assert.assertEquals("| . . . | . . . | . . . |", scanner.nextLine()); 
-				Assert.assertEquals("| . . . | . . . | . . . |", scanner.nextLine()); 
-				Assert.assertEquals("+-------+-------+-------+", scanner.nextLine()); 
+				Assert.assertEquals("      SUDOKU 9 x 9      ",
+						scanner.nextLine());
+				Assert.assertEquals("      ============      ",
+						scanner.nextLine());
+				Assert.assertEquals("+-------+-------+-------+",
+						scanner.nextLine());
+				Assert.assertEquals("| . . . | . . . | . . . |",
+						scanner.nextLine());
+				Assert.assertEquals("| . . . | . . . | . . . |",
+						scanner.nextLine());
+				Assert.assertEquals("| . . . | . . . | . . . |",
+						scanner.nextLine());
+				Assert.assertEquals("+-------+-------+-------+",
+						scanner.nextLine());
+				Assert.assertEquals("| . . . | . . . | . . . |",
+						scanner.nextLine());
+				Assert.assertEquals("| . . . | . . . | . . . |",
+						scanner.nextLine());
+				Assert.assertEquals("| . . . | . . . | . . . |",
+						scanner.nextLine());
+				Assert.assertEquals("+-------+-------+-------+",
+						scanner.nextLine());
+				Assert.assertEquals("| . . . | . . . | . . . |",
+						scanner.nextLine());
+				Assert.assertEquals("| . . . | . . . | . . . |",
+						scanner.nextLine());
+				Assert.assertEquals("| . . . | . . . | . . . |",
+						scanner.nextLine());
+				Assert.assertEquals("+-------+-------+-------+",
+						scanner.nextLine());
 			}
 		});
 	}
