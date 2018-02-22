@@ -16,7 +16,13 @@ public class MainTest {
 	@Before
 	public void before() {
 		scenario = new Scenario();
-		scenario.setApplication(() -> Main.main(new String[0]));
+		scenario.setApplication(new Runnable(){
+			public void run(){
+			
+			Main.main(new String[0]);
+			}
+		
+		});
 		scenario.setInputs();
 	}
 
