@@ -1,12 +1,13 @@
 package be.steformations.sudoku.menu;
 
+
 import org.junit.Assert;
 import org.junit.Test;
 
 public class MenuTest {
 
 	/**
-	 * Test que les items d'un menu sont récupérables via leur clé.
+	 * Test que les items d'un menu sont rï¿½cupï¿½rables via leur clï¿½.
 	 */
 	@Test
 	public void testGetItem(){
